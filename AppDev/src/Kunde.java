@@ -1,17 +1,28 @@
 public class Kunde {
-    String FirstName;
-    String LastName;
+    String Vorname;
+    String Nachname;
+    Adresse Rechnungsadresse;
+    Adresse Versandadresse;
+    Warenkorb Warenkorb;
 
     public Kunde(
-            String firstName,
-            String lastName)
+            String vorname,
+            String nachname,
+            Adresse rechnungsadresse,
+            Adresse versandadresse,
+            Warenkorb warenkorb)
     {
-        FirstName = firstName;
-        LastName = lastName;
+        Vorname = vorname;
+        Nachname = nachname;
+        Rechnungsadresse = rechnungsadresse;
+        Versandadresse = versandadresse;
+        Warenkorb = warenkorb;
     }
 
-    public void PrintName()
-    {
-        System.out.println(FirstName + " " + LastName);
+    public void versandadresseAendern(Adresse adresse){
+        Versandadresse = adresse;
+    }
+    public void rechnungsadresseAendern(Adresse adresse){
+        Rechnungsadresse = adresse;
     }
 }
