@@ -23,6 +23,21 @@ public class Kunde {
         Versandadresse = adresse;
     }
     public void rechnungsadresseAendern(Adresse adresse){
+
         Rechnungsadresse = adresse;
+    }
+
+    public void kundeDetailsAusgeben(){
+        System.out.println(Vorname +" "+ Nachname);
+        System.out.println("Versandadresse: "+ Versandadresse.PLZ +" "+ Versandadresse.Stadt +" "+ Versandadresse.Strasse +" "+ Versandadresse.Hausnummer);
+        System.out.println("Rechnungsadresse: "+ Rechnungsadresse.PLZ +" "+ Rechnungsadresse.Stadt +" "+ Rechnungsadresse.Strasse +" "+ Rechnungsadresse.Hausnummer);
+        System.out.println(" ");
+        System.out.println(" ");
+    }
+
+    public void kundenNamenAusgeben(){
+        System.out.println(Vorname +" "+ Nachname);
+        System.out.println(" ");
+        System.out.println(" ");
     }
 }
