@@ -14,12 +14,11 @@ import KundenInformation.Adresse;
  * @author Jens Müller
  * @author Lukas Großnick
  * @author Sebastian Leszinski
- *
  * @version 2.2.3
  */
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main( String[] args ) {
         /**
          * Anlegen von 4 verschiedenen Adressen, darunter 2 Versandadressen und 2 Rechnungsadressen
          */
@@ -46,8 +45,8 @@ public class Main {
         /**
          * Kunden werden über die Methode KundeAnlegen erstellt
          */
-        Kunde kunde1 = KundeAnlegen("Bill", "Gates", reAdresse1, veAdresse1);
-        Kunde kunde2 = KundeAnlegen("Linus", "Torvalds", reAdresse2, veAdresse2);
+        Kunde kunde1 = kundeAnlegen("Bill", "Gates", reAdresse1, veAdresse1);
+        Kunde kunde2 = kundeAnlegen("Linus", "Torvalds", reAdresse2, veAdresse2);
 
         /**
          * zu Beginn werden die Kundendetails und
@@ -110,17 +109,16 @@ public class Main {
      * und erstellt bei der erstellung des Kunden einen Warenkorb
      * der dem Kunden zugewisen wird
      *
-     * @param vorname enthält den Vornamen des Kunden
-     * @param nachname enthält den Nachnamen des Kunden
+     * @param vorname          enthält den Vornamen des Kunden
+     * @param nachname         enthält den Nachnamen des Kunden
      * @param rechnungsAdresse die umzurechnende Geschwindigkeit in km/h
-     * @param versandAdresse die umzurechnende Geschwindigkeit in km/h
-     *
+     * @param versandAdresse   die umzurechnende Geschwindigkeit in km/h
      * @return Kunde mit seinen zugehörigen Adressen und dem zughörigen Warenkorb
      */
-    public static Kunde KundeAnlegen(String vorname,
-                             String nachname,
-                             Adresse rechnungsAdresse,
-                             Adresse versandAdresse){
+    public static Kunde kundeAnlegen( String vorname,
+                                      String nachname,
+                                      Adresse rechnungsAdresse,
+                                      Adresse versandAdresse ) {
         Warenkorb warenkorb = new Warenkorb();
         Kunde kunde = new Kunde(vorname, nachname, rechnungsAdresse, versandAdresse, warenkorb);
 

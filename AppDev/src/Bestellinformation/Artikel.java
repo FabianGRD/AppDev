@@ -13,7 +13,7 @@ public class Artikel {
     public Artikel(
             String bezeichnung,
             double preis,
-            String kategorie){
+            String kategorie ) {
         Bezeichnung = bezeichnung;
         Preis = preis;
         Kategorie = kategorie;

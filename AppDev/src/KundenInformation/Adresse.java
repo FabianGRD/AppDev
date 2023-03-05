@@ -16,7 +16,7 @@ public class Adresse {
             String hausnummer,
             int plz,
             String stadt
-    ){
+    ) {
         Strasse = strasse;
         Hausnummer = hausnummer;
         PLZ = plz;

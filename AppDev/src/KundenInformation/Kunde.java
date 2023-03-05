@@ -1,5 +1,7 @@
 package KundenInformation;
+
 import Bestellinformation.Warenkorb;
+
 /**
  * Kunde ist verantwortlich für alle Daten,
  * die einen Kunden beschreiben
@@ -18,8 +20,7 @@ public class Kunde {
             String nachname,
             Adresse rechnungsadresse,
             Adresse versandadresse,
-            Warenkorb warenkorb)
-    {
+            Warenkorb warenkorb ) {
         Vorname = vorname;
         Nachname = nachname;
         Rechnungsadresse = rechnungsadresse;
@@ -33,7 +34,7 @@ public class Kunde {
      *
      * @param adresse enthält die Adresse des Kunden
      */
-    public void versandadresseAendern(Adresse adresse){
+    public void versandadresseAendern( Adresse adresse ) {
         Versandadresse = adresse;
     }
 
@@ -42,26 +43,26 @@ public class Kunde {
      *
      * @param adresse enthält die Adresse des Kunden
      */
-    public void rechnungsadresseAendern(Adresse adresse){
-
+    public void rechnungsadresseAendern( Adresse adresse ) {
         Rechnungsadresse = adresse;
     }
 
     /**
      * Gibt alle Details eines Kunden aus
      */
-    public void kundeDetailsAusgeben(){
-        System.out.println(Vorname +" "+ Nachname);
-        System.out.println("Versandadresse: "+ Versandadresse.PLZ +" "+ Versandadresse.Stadt +" "+ Versandadresse.Strasse +" "+ Versandadresse.Hausnummer);
-        System.out.println("Rechnungsadresse: "+ Rechnungsadresse.PLZ +" "+ Rechnungsadresse.Stadt +" "+ Rechnungsadresse.Strasse +" "+ Rechnungsadresse.Hausnummer);
+    public void kundeDetailsAusgeben() {
+        System.out.println(Vorname + " " + Nachname);
+        System.out.println("Versandadresse: " + Versandadresse.PLZ + " " + Versandadresse.Stadt + " " + Versandadresse.Strasse + " " + Versandadresse.Hausnummer);
+        System.out.println("Rechnungsadresse: " + Rechnungsadresse.PLZ + " " + Rechnungsadresse.Stadt + " " + Rechnungsadresse.Strasse + " " + Rechnungsadresse.Hausnummer);
         System.out.println(" ");
         System.out.println(" ");
     }
+
     /**
      * Gibt den Vornamen und Nachnamen des Kunden aus
      */
-    public void kundenNamenAusgeben(){
-        System.out.println(Vorname +" "+ Nachname);
+    public void kundenNamenAusgeben() {
+        System.out.println(Vorname + " " + Nachname);
         System.out.println(" ");
         System.out.println(" ");
     }
