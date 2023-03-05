@@ -4,11 +4,11 @@
  * der ausgeführt wird
  * und dabei auf die unterschiedlichen Klassen zugreift
  *
+ * @author Cenk Cansiz
  * @author Fabian Grudzinski
- * @author Fabian Grudzinski
- * @author Fabian Grudzinski
- * @author Fabian Grudzinski
- * @author Fabian Grudzinski
+ * @author Jens Müller
+ * @author Lukas Großnick
+ * @author Sebastian Leszinski
  *
  * @version 2.2.3
  */
