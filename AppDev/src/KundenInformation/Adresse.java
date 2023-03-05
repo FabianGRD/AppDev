@@ -1,13 +1,15 @@
+package KundenInformation;
+
 /**
  * Adresse ist verantwortlich für alle Daten,
  * die eine Adresse beschreiben
  * und hält diese bereit
  */
 public class Adresse {
-    String Strasse;
-    String Hausnummer;
-    int PLZ;
-    String Stadt;
+    public String Strasse;
+    public String Hausnummer;
+    public int PLZ;
+    public String Stadt;
 
     public Adresse(
             String strasse,

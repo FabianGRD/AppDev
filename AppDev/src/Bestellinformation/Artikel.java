@@ -1,3 +1,5 @@
+package Bestellinformation;
+
 /**
  * Artikel ist verantwortlich für alle Daten,
  * die einem Produkt zugehörig sind

@@ -1,3 +1,8 @@
+import Bestellinformation.Warenkorb;
+import Bestellinformation.Artikel;
+import KundenInformation.Kunde;
+import KundenInformation.Adresse;
+
 /**
  * Main startet das Programm
  * und beinhält einen festen Ablauf
@@ -18,10 +23,10 @@ public class Main {
         /**
          * Anlegen von 4 verschiedenen Adressen, darunter 2 Versandadressen und 2 Rechnungsadressen
          */
-        Adresse reAdresse1 = new Adresse("straße", "10a", 52722, "koeln");
-        Adresse veAdresse1 = new Adresse("straße", "10a", 52722, "koeln");
-        Adresse reAdresse2 = new Adresse("straße", "10a", 52722, "koeln");
-        Adresse veAdresse2 = new Adresse("straße", "10a", 52722, "koeln");
+        Adresse reAdresse1 = new Adresse("Ligusterweg", "4", 75968, "London");
+        Adresse veAdresse1 = new Adresse("Bat Cave", "10a", 10001, "Gotham City");
+        Adresse reAdresse2 = new Adresse("Schicksalsberg", "1", 52722, "Mordor");
+        Adresse veAdresse2 = new Adresse("Beutelsend", "1", 3400, "Auenland");
 
         /**
          * Anlegen von 10 Artikeln die
@@ -89,7 +94,7 @@ public class Main {
          * Kunde 2 ändert seine Versandadresse
          * und danaach werden die Kundendetails ausgegeben
          */
-        Adresse neueVeAdresse = new Adresse("straße neu", "10a", 52722, "koeln");
+        Adresse neueVeAdresse = new Adresse("Hacker Way", "1", 94025, "San Francisco");
         kunde2.versandadresseAendern(neueVeAdresse);
         kunde2.kundeDetailsAusgeben();
 

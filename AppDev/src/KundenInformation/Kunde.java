@@ -1,3 +1,5 @@
+package KundenInformation;
+import Bestellinformation.Warenkorb;
 /**
  * Kunde ist verantwortlich für alle Daten,
  * die einen Kunden beschreiben
@@ -5,11 +7,11 @@
  * auf die Klasse Adresse zu
  */
 public class Kunde {
-    String Vorname;
-    String Nachname;
-    Adresse Rechnungsadresse;
-    Adresse Versandadresse;
-    Warenkorb Warenkorb;
+    public String Vorname;
+    public String Nachname;
+    public Adresse Rechnungsadresse;
+    public Adresse Versandadresse;
+    public Warenkorb Warenkorb;
 
     public Kunde(
             String vorname,

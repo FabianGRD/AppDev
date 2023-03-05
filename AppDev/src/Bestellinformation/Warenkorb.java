@@ -1,6 +1,9 @@
+package Bestellinformation;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import KundenInformation.Adresse;
 
 /**
  * Warenkorb ist verantwortlich für alle Daten
