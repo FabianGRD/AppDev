@@ -1,3 +1,9 @@
+/**
+ * Kunde ist verantwortlich für alle Daten,
+ * die einen Kunden beschreiben
+ * und greift für die Versand- und Rechnungsadresse
+ * auf die Klasse Adresse zu
+ */
 public class Kunde {
     String Vorname;
     String Nachname;
@@ -19,14 +25,29 @@ public class Kunde {
         Warenkorb = warenkorb;
     }
 
+
+    /**
+     * Ändert die Versandadresse
+     *
+     * @param adresse enthält die Adresse des Kunden
+     */
     public void versandadresseAendern(Adresse adresse){
         Versandadresse = adresse;
     }
+
+    /**
+     * Ändert die Rechnungsadresse
+     *
+     * @param adresse enthält die Adresse des Kunden
+     */
     public void rechnungsadresseAendern(Adresse adresse){
 
         Rechnungsadresse = adresse;
     }
 
+    /**
+     * Gibt alle Details eines Kunden aus
+     */
     public void kundeDetailsAusgeben(){
         System.out.println(Vorname +" "+ Nachname);
         System.out.println("Versandadresse: "+ Versandadresse.PLZ +" "+ Versandadresse.Stadt +" "+ Versandadresse.Strasse +" "+ Versandadresse.Hausnummer);
@@ -34,7 +55,9 @@ public class Kunde {
         System.out.println(" ");
         System.out.println(" ");
     }
-
+    /**
+     * Gibt den Vornamen und Nachnamen des Kunden aus
+     */
     public void kundenNamenAusgeben(){
         System.out.println(Vorname +" "+ Nachname);
         System.out.println(" ");

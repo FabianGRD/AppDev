@@ -2,6 +2,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Warenkorb ist verantwortlich für alle Daten
+ * der Bestellung zu Speichern, zu berechnen und auszugeben
+ */
 public class Warenkorb {
     double ArtikelGesamtPreis = 0;
     int MaximalMenge = 100;
@@ -9,38 +13,20 @@ public class Warenkorb {
     double Versandkosten = 0;
     List<Artikel> AlleArtikel = new ArrayList<>();
 
+    /**
+     * Der Konsturktor des Warenkorbs ist leer,
+     * weil der Warenkorb mit Standardwerten erstellt wird
+     */
     public Warenkorb(){
     }
 
-    private double berechneArtikelGesamtPreis(){
-        double preis = 0;
-        for (Artikel artikel : AlleArtikel){
-            preis += artikel.Preis;
-        }
-
-        return preis;
-    }
-    public double berechneVersand(){
-        ArtikelGesamtPreis = berechneArtikelGesamtPreis();
-
-        if( ArtikelGesamtPreis == 0){
-            return 0;
-        }else if(ArtikelGesamtPreis <= 20){
-            return 5.95;
-        } else if (ArtikelGesamtPreis <= 50) {
-            return 2.95;
-        }else {
-            return 0;
-        }
-    }
-
-    public double berechneGesamtPreis(){
-        Versandkosten = berechneVersand();
-        GesamtPreis = Versandkosten + ArtikelGesamtPreis;
-
-        return GesamtPreis;
-    }
-
+    /**
+     * Schließt die Bestellung ab und gibt eine
+     * Übersicht der Bestellung aus
+     *
+     * @param versandAdresse enthält die Adresse des Kunden
+     *
+     */
     public void bestellungAbschliessen(Adresse versandAdresse){
         berechneGesamtPreis();
         DecimalFormat f = new DecimalFormat("#0.00");
@@ -55,18 +41,40 @@ public class Warenkorb {
         System.out.println(" ");
     }
 
+    /**
+     * Prüft ob die Menge der Artikel
+     * die Gesamtmenge nicht überschreitet
+     * und fügt dann einen Artikel dem Warenkorb hinzu
+     *
+     * @param artikel Artikel der hinzugefügt werden soll
+     */
     public void artikelHinzufuegen(Artikel artikel){
         if(AlleArtikel.size() < MaximalMenge){
             AlleArtikel.add(artikel);
         }
     }
 
+    /**
+     * Prüft ob der Artikel im Warenkorb vorhanden ist
+     * und entfernt diesen dann
+     *
+     * @param artikel Artikel der entfernt werden soll
+     */
     public void artikelEntfernen(Artikel artikel){
         if(AlleArtikel.contains(artikel)){
             AlleArtikel.remove(artikel);
         }
     }
 
+    /**
+     * Prüft wie oft der Artikel bereits
+     * im Warenkorb vorhanden ist
+     * und fügt Artikel solange hinzu oder entfernt diese
+     * bis die gewünschte Menge ereicht wurde
+     *
+     * @param artikel Artikel angepasst werden soll
+     * @param menge gewünschte Menge des Artikels
+     */
     public void mengeAnpassen(int menge, Artikel artikel){
         int anzahlArtikel = 0;
         for (Artikel gesuchterArtikel : AlleArtikel) {
@@ -91,6 +99,10 @@ public class Warenkorb {
         }
     }
 
+    /**
+     * Gibt eine Übersicht des Warenkorbes aus
+     * und formatiert die double Werte
+     */
     public void warenkorbAusgeben(){
         DecimalFormat f = new DecimalFormat("#0.00");
         berechneGesamtPreis();
@@ -116,6 +128,14 @@ public class Warenkorb {
         System.out.println(" ");
         System.out.println(" ");
     }
+
+    /**
+     * Zählt die Menge des gesuchten Artikels
+     *
+     * @param gesuchterArtikel enthält den gesuchten Artikel
+     *
+     * @return gibt die Menge des Artikels als int zurück
+     */
     private int countArtikel(Artikel gesuchterArtikel){
         int anzahlArtikel = 0;
         for (Artikel artikel: AlleArtikel) {
@@ -124,6 +144,53 @@ public class Warenkorb {
             }
         }
         return anzahlArtikel;
+    }
+
+    /**
+     *Berechnet den Artikel Gesamtpreis (ohne Versandkosten)
+     *
+     * @return gibt den berechneten Preis als ein double Wert zurück
+     */
+    private double berechneArtikelGesamtPreis(){
+        double preis = 0;
+        for (Artikel artikel : AlleArtikel){
+            preis += artikel.Preis;
+        }
+
+        return preis;
+    }
+
+    /**
+     *Berechnet die Versandkosten ahnand des Artikel Gesamtpreises
+     * Bei
+     *
+     * @return gibt den berechneten Preis als ein double Wert zurück
+     */
+    private double berechneVersand(){
+        ArtikelGesamtPreis = berechneArtikelGesamtPreis();
+
+        if( ArtikelGesamtPreis == 0){
+            return 0;
+        }else if(ArtikelGesamtPreis <= 20){
+            return 5.95;
+        } else if (ArtikelGesamtPreis <= 50) {
+            return 2.95;
+        }else {
+            return 0;
+        }
+    }
+    /**
+     *Berechnet den Gesamtpreis indem die Methoden
+     * berechneVersand und berechneArtikelGesamtPreis
+     * aufgerufen werden
+     *
+     * @return gibt den berechneten Preis als ein double Wert zurück
+     */
+    private double berechneGesamtPreis(){
+        Versandkosten = berechneVersand();
+        GesamtPreis = Versandkosten + ArtikelGesamtPreis;
+
+        return GesamtPreis;
     }
 }
 

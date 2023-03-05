@@ -1,3 +1,8 @@
+/**
+ * Adresse ist verantwortlich für alle Daten,
+ * die eine Adresse beschreiben
+ * und hält diese bereit
+ */
 public class Adresse {
     String Strasse;
     String Hausnummer;
